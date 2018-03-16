@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Arrondissement.
+    -->
+    <changeSet id="20180316142049-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="arrondissement_id"
+                                 baseTableName="arrondissement"
+                                 constraintName="fk_arrondissement_arrondissement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="department"/>
+
+    </changeSet>
+</databaseChangeLog>

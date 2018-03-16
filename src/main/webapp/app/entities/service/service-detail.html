@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span data-translate="monMedecinApp.service.detail.title">Service</span> {{vm.service.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="monMedecinApp.service.name">Name</span></dt>
+        <dd>
+            <span>{{vm.service.name}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.service.description">Description</span></dt>
+        <dd>
+            <span>{{vm.service.description}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.service.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.service.image">
+                <a ng-click="vm.openFile(vm.service.imageContentType, vm.service.image)" data-translate="entity.action.open">open</a>
+                {{vm.service.imageContentType}}, {{vm.byteSize(vm.service.image)}}
+            </div>
+        </dd>
+        <dt><span data-translate="monMedecinApp.service.hospital">Hospital</span></dt>
+        <dd>
+            <a ui-sref="hospital-detail({id:vm.service.hospital.id})">{{vm.service.hospital.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="service-detail.edit({id:vm.service.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

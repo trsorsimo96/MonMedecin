@@ -1,0 +1,24 @@
+
+{
+    "monMedecinApp": {
+        "town" : {
+            "home": {
+                "title": "Towns",
+                "createLabel": "Créer un nouveau Town",
+                "createOrEditLabel": "Créer ou éditer un Town",
+                "search": "Recherche pour Town"
+            },
+            "created": "Un nouveau Town a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Town avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Town avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Town {{ id }} ?"
+            },
+            "detail": {
+                "title": "Town"
+            },
+            "name": "Name",
+            "image": "Image"
+        }
+    }
+}

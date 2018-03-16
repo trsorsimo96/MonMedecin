@@ -1,0 +1,100 @@
+<div>
+    <h2 data-translate="monMedecinApp.hospital.home.title">Hospitals</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="hospital.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="monMedecinApp.hospital.home.createLabel">
+                        Create new Hospital
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'monMedecinApp.hospital.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.name">Name</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.locality">Locality</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.phone">Phone</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.email">Email</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.lattitude">Lattitude</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.longitude">Longitude</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.image">Image</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.hospital">Hospital</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.town">Town</span></th>
+                    <th><span data-translate="monMedecinApp.hospital.arrondissement">Arrondissement</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="hospital in vm.hospitals track by hospital.id">
+                    <td><a ui-sref="hospital-detail({id:hospital.id})">{{hospital.id}}</a></td>
+                    <td>{{hospital.name}}</td>
+                    <td>{{hospital.locality}}</td>
+                    <td>{{hospital.phone}}</td>
+                    <td>{{hospital.email}}</td>
+                    <td>{{hospital.lattitude}}</td>
+                    <td>{{hospital.longitude}}</td>
+                    <td>
+                        <a ng-if="hospital.image" ng-click="vm.openFile(hospital.imageContentType, hospital.image)" data-translate="entity.action.open">open</a>
+                        <span ng-if="hospital.image">{{hospital.imageContentType}}, {{vm.byteSize(hospital.image)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="sub-category-detail({id:hospital.hospital.id})">{{hospital.hospital.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="quarter-detail({id:hospital.town.id})">{{hospital.town.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="arrondissement-detail({id:hospital.arrondissement.id})">{{hospital.arrondissement.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="hospital-detail({id:hospital.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="hospital.edit({id:hospital.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="hospital.delete({id:hospital.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

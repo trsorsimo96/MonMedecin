@@ -7,6 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
+                "hospital": "Hospital",
+                "region": "Region",
+                "department": "Department",
+                "arrondissement": "Arrondissement",
+                "town": "Town",
+                "quarter": "Quarter",
+                "category": "Category",
+                "subCategory": "Sub Category",
+                "service": "Service",
+                "medecin": "Medecin",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

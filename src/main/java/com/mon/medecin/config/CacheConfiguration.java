@@ -43,6 +43,16 @@ public class CacheConfiguration {
             cm.createCache(com.mon.medecin.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.mon.medecin.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.mon.medecin.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Hospital.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Region.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Department.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Arrondissement.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Town.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Quarter.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.SubCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Service.class.getName(), jcacheConfiguration);
+            cm.createCache(com.mon.medecin.domain.Medecin.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

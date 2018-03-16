@@ -1,0 +1,24 @@
+
+{
+    "monMedecinApp": {
+        "quarter" : {
+            "home": {
+                "title": "Quarters",
+                "createLabel": "Créer un nouveau Quarter",
+                "createOrEditLabel": "Créer ou éditer un Quarter",
+                "search": "Recherche pour Quarter"
+            },
+            "created": "Un nouveau Quarter a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Quarter avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Quarter avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Quarter {{ id }} ?"
+            },
+            "detail": {
+                "title": "Quarter"
+            },
+            "name": "Name",
+            "town": "Town"
+        }
+    }
+}
