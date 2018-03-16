@@ -1,0 +1,24 @@
+
+{
+    "monMedecinApp": {
+        "arrondissement" : {
+            "home": {
+                "title": "Arrondissements",
+                "createLabel": "Créer un nouveau Arrondissement",
+                "createOrEditLabel": "Créer ou éditer un Arrondissement",
+                "search": "Recherche pour Arrondissement"
+            },
+            "created": "Un nouveau Arrondissement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Arrondissement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Arrondissement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Arrondissement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Arrondissement"
+            },
+            "name": "Name",
+            "arrondissement": "Arrondissement"
+        }
+    }
+}

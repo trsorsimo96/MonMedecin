@@ -1,0 +1,32 @@
+
+{
+    "monMedecinApp": {
+        "hospital" : {
+            "home": {
+                "title": "Hospitals",
+                "createLabel": "Créer un nouveau Hospital",
+                "createOrEditLabel": "Créer ou éditer un Hospital",
+                "search": "Recherche pour Hospital"
+            },
+            "created": "Un nouveau Hospital a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Hospital avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Hospital avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Hospital {{ id }} ?"
+            },
+            "detail": {
+                "title": "Hospital"
+            },
+            "name": "Name",
+            "locality": "Locality",
+            "phone": "Phone",
+            "email": "Email",
+            "lattitude": "Lattitude",
+            "longitude": "Longitude",
+            "image": "Image",
+            "hospital": "Hospital",
+            "town": "Town",
+            "arrondissement": "Arrondissement"
+        }
+    }
+}

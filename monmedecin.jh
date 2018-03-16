@@ -1,0 +1,75 @@
+
+entity Hospital {
+   name String required,
+   locality String,
+   phone String,
+   email String,
+   lattitude Long,
+   longitude Long,
+   image Blob
+}
+
+entity Region {
+    name String required
+}
+
+entity Department{
+    name String required
+}
+
+entity Arrondissement{
+   name String required
+}
+
+entity Town {
+   name String required,
+   image Blob
+}
+
+entity Quarter {
+   name String required
+}
+
+entity Category {
+	name String required,
+    description String,
+    image Blob
+}
+
+entity SubCategory {
+	name String required,
+    description String,
+    image Blob
+}
+
+entity Service {
+	name String required,
+    description String,
+    image Blob
+}
+
+entity Medecin {
+	name String required,
+    title String required,
+    email String,
+    phone String
+}
+
+
+relationship ManyToOne {
+	SubCategory{category} to Category,
+    Hospital{hospital} to SubCategory,
+    Medecin{service} to Service,
+    Service{hospital} to Hospital,
+    Department{region} to Region,
+    Arrondissement{arrondissement} to Department,
+    Quarter{town} to Town,
+    Hospital{town} to Quarter
+    Hospital{arrondissement} to Arrondissement
+    
+}
+
+
+
+
+

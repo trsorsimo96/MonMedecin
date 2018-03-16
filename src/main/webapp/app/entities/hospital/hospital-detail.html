@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span data-translate="monMedecinApp.hospital.detail.title">Hospital</span> {{vm.hospital.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="monMedecinApp.hospital.name">Name</span></dt>
+        <dd>
+            <span>{{vm.hospital.name}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.locality">Locality</span></dt>
+        <dd>
+            <span>{{vm.hospital.locality}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.phone">Phone</span></dt>
+        <dd>
+            <span>{{vm.hospital.phone}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.email">Email</span></dt>
+        <dd>
+            <span>{{vm.hospital.email}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.lattitude">Lattitude</span></dt>
+        <dd>
+            <span>{{vm.hospital.lattitude}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.longitude">Longitude</span></dt>
+        <dd>
+            <span>{{vm.hospital.longitude}}</span>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.hospital.image">
+                <a ng-click="vm.openFile(vm.hospital.imageContentType, vm.hospital.image)" data-translate="entity.action.open">open</a>
+                {{vm.hospital.imageContentType}}, {{vm.byteSize(vm.hospital.image)}}
+            </div>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.hospital">Hospital</span></dt>
+        <dd>
+            <a ui-sref="sub-category-detail({id:vm.hospital.hospital.id})">{{vm.hospital.hospital.id}}</a>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.town">Town</span></dt>
+        <dd>
+            <a ui-sref="quarter-detail({id:vm.hospital.town.id})">{{vm.hospital.town.id}}</a>
+        </dd>
+        <dt><span data-translate="monMedecinApp.hospital.arrondissement">Arrondissement</span></dt>
+        <dd>
+            <a ui-sref="arrondissement-detail({id:vm.hospital.arrondissement.id})">{{vm.hospital.arrondissement.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="hospital-detail.edit({id:vm.hospital.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

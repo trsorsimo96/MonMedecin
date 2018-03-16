@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySubCategoryLabel" data-translate="monMedecinApp.subCategory.home.createOrEditLabel">Create or edit a Sub Category</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.subCategory.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.subCategory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="monMedecinApp.subCategory.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.subCategory.name"
+                    required/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="monMedecinApp.subCategory.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.subCategory.description"
+                    />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.subCategory)">
+            <label class="control-label" data-translate="monMedecinApp.subCategory.image" for="field_image">Image</label>
+            <div>
+                <div ng-if="vm.subCategory.image" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.subCategory.imageContentType, vm.subCategory.image)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.subCategory.imageContentType}}, {{vm.byteSize(vm.subCategory.image)}}</span>
+                    <button type="button" ng-click="vm.subCategory.image=null;vm.subCategory.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.subCategory)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.subCategory.image"
+                    />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.subCategory.imageContentType" />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="monMedecinApp.subCategory.category" for="field_category">Category</label>
+            <select class="form-control" id="field_category" name="category" ng-model="vm.subCategory.category" ng-options="category as category.id for category in vm.categories track by category.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
